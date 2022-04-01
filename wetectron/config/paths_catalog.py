@@ -10,6 +10,18 @@ import os
 class DatasetCatalog(object):
     DATA_DIR = "datasets"
     DATASETS = {
+        # "dishwasher_train": {
+        #     "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/data/",
+        #     "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/labels.json"
+        # },
+        # "dishwasher_train_partial": {
+        #     "img_dir": "dishwasher/data",
+        #     "ann_file": "dishwasher/annotations/instances_train2014_partial.json"
+        # },
+        # "dishwasher_val": {
+        #     "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/data/",
+        #     "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/labels.json"
+        # },
         "coco_2017_train": {
             "img_dir": "coco/train2017",
             "ann_file": "coco/annotations/instances_train2017.json"
@@ -18,17 +30,29 @@ class DatasetCatalog(object):
             "img_dir": "coco/val2017",
             "ann_file": "coco/annotations/instances_val2017.json"
         },
+        # "coco_2014_train": {
+        #     "img_dir": "coco/train2014",
+        #     "ann_file": "coco/annotations/instances_train2014.json"
+        # },
         "coco_2014_train": {
-            "img_dir": "coco/train2014",
-            "ann_file": "coco/annotations/instances_train2014.json"
+            "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/data/",
+            "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/labels.json"
         },
         "coco_2014_train_partial": {
             "img_dir": "coco/train2014",
             "ann_file": "coco/annotations/instances_train2014_partial.json"
         },
+        # "coco_2014_train_partial": {
+        #     "img_dir": "coco/train2014",
+        #     "ann_file": "/home/crdw/suraj/data/coco/annotations/instances_train2014_partial.json"
+        # },
+        # "coco_2014_val": {
+        #     "img_dir": "coco/val2014",
+        #     "ann_file": "coco/annotations/instances_val2014.json"
+        # },
         "coco_2014_val": {
-            "img_dir": "coco/val2014",
-            "ann_file": "coco/annotations/instances_val2014.json"
+            "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/data/",
+            "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/labels.json"
         },
         "coco_2014_minival": {
             "img_dir": "coco/val2014",
@@ -102,7 +126,7 @@ class DatasetCatalog(object):
         "cityscapes_fine_instanceonly_seg_test_cocostyle": {
             "img_dir": "cityscapes/images",
             "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_test.json"
-        }
+        },
     }
 
     @staticmethod
@@ -138,6 +162,17 @@ class DatasetCatalog(object):
             )
             return dict(
                 factory="COCODataset",
+                args=args,
+            )
+        elif "dishwasher" in name:
+            data_dir = DatasetCatalog.DATA_DIR
+            attrs = DatasetCatalog.DATASETS[name]
+            args = dict(
+                root=os.path.join(data_dir, attrs["img_dir"]),
+                ann_file=os.path.join(data_dir, attrs["ann_file"]),
+            )
+            return dict(
+                factory="DishwasherDataset",
                 args=args,
             )
         raise RuntimeError("Dataset not available: {}".format(name))

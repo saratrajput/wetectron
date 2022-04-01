@@ -68,7 +68,8 @@ class COCODataset(torchvision.datasets.coco.CocoDetection):
         if remove_images_without_annotations:
             ids = []
             for img_id in self.ids:
-                ann_ids = self.coco.getAnnIds(imgIds=img_id, iscrowd=None)
+                # ann_ids = self.coco.getAnnIds(imgIds=img_id, iscrowd=None)
+                ann_ids = self.coco.getAnnIds(imgIds=img_id)
                 anno = self.coco.loadAnns(ann_ids)
                 if has_valid_annotation(anno):
                     ids.append(img_id)
@@ -101,8 +102,8 @@ class COCODataset(torchvision.datasets.coco.CocoDetection):
 
         # filter crowd annotations
         # TODO might be better to add an extra field
-        if "lvis_v0.5" not in self.ann_file:
-            anno = [obj for obj in anno if obj["iscrowd"] == 0]
+        # if "lvis_v0.5" not in self.ann_file:
+        #     anno = [obj for obj in anno if obj["iscrowd"] == 0]
 
         if self.proposals is not None:
             img_id = self.ids[idx] 
