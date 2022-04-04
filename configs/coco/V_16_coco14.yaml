@@ -22,8 +22,10 @@ DATASETS:
   TRAIN: ("coco_2014_train",)
   TEST: ("coco_2014_val",)
 PROPOSAL_FILES:
-  TRAIN: ('proposal/MCG-coco_2014_train-boxes.pkl',)
-  TEST:  ('proposal/MCG-coco_2014_val-boxes.pkl',)
+  # TRAIN: ('proposal/MCG-coco_2014_train-boxes.pkl',)
+  # TEST:  ('proposal/MCG-coco_2014_val-boxes.pkl',)
+  TRAIN: ('proposal/EdgeBoxes-dishwasher_train_im_data.pkl',)
+  TEST:  ('proposal/EdgeBoxes-dishwasher_test_real_data.pkl',)
 DATALOADER:
   SIZE_DIVISIBILITY: 32
 INPUT:

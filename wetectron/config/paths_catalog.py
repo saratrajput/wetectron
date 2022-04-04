@@ -10,18 +10,6 @@ import os
 class DatasetCatalog(object):
     DATA_DIR = "datasets"
     DATASETS = {
-        # "dishwasher_train": {
-        #     "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/data/",
-        #     "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/labels.json"
-        # },
-        # "dishwasher_train_partial": {
-        #     "img_dir": "dishwasher/data",
-        #     "ann_file": "dishwasher/annotations/instances_train2014_partial.json"
-        # },
-        # "dishwasher_val": {
-        #     "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/data/",
-        #     "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/labels.json"
-        # },
         "coco_2017_train": {
             "img_dir": "coco/train2017",
             "ann_file": "coco/annotations/instances_train2017.json"
@@ -30,18 +18,11 @@ class DatasetCatalog(object):
             "img_dir": "coco/val2017",
             "ann_file": "coco/annotations/instances_val2017.json"
         },
+        # Original coco
         # "coco_2014_train": {
         #     "img_dir": "coco/train2014",
         #     "ann_file": "coco/annotations/instances_train2014.json"
         # },
-        "coco_2014_train": {
-            "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/data/",
-            "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/labels.json"
-        },
-        "coco_2014_train_partial": {
-            "img_dir": "coco/train2014",
-            "ann_file": "coco/annotations/instances_train2014_partial.json"
-        },
         # "coco_2014_train_partial": {
         #     "img_dir": "coco/train2014",
         #     "ann_file": "/home/crdw/suraj/data/coco/annotations/instances_train2014_partial.json"
@@ -50,6 +31,15 @@ class DatasetCatalog(object):
         #     "img_dir": "coco/val2014",
         #     "ann_file": "coco/annotations/instances_val2014.json"
         # },
+        # Dishwasher data
+        "coco_2014_train": {
+            "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/data/",
+            "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/labels.json"
+        },
+        "coco_2014_train_partial": {
+            "img_dir": "coco/train2014",
+            "ann_file": "coco/annotations/instances_train2014_partial.json"
+        },
         "coco_2014_val": {
             "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/data/",
             "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/labels.json"
