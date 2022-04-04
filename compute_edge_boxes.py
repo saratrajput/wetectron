@@ -6,13 +6,13 @@ author: Suraj Pattar
 date: 4 April 2022
 """
 import argparse
-import logging
-import cv2
-import numpy as np
-
 import json
+import logging
 import os
 import pickle
+
+import cv2
+import numpy as np
 
 # Initialize logging
 log = logging.getLogger(__name__)
@@ -68,7 +68,7 @@ def compute_edge_boxes(img, edge_detection_obj):
 
 def main(args):
     """
-    Implement the main function.
+    Initiate and compute edge boxes in a loop for all the images in path.
     """
     input_dir = args.input_dir
     output_file = args.output_file
