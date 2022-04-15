@@ -59,7 +59,7 @@ def compute_edge_boxes(img, edge_detection_obj):
     # Create edge box:
     edge_boxes = cv2.ximgproc.createEdgeBoxes()
 
-    edge_boxes.setMaxBoxes(100)
+    # edge_boxes.setMaxBoxes(100)
     edge_boxes.setAlpha(0.5)
     edge_boxes.setBeta(0.5)
     prop_boxes, scores = edge_boxes.getBoundingBoxes(edges, orient_map)
@@ -102,6 +102,7 @@ def main(args):
 
         # Convert to dtype float32
         box = box.astype(np.float32)
+        score = score + 0.5
         boxes.append(box)
         scores.append(score)
         indexes.append(index)
