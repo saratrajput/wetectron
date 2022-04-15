@@ -24,8 +24,11 @@ DATASETS:
 PROPOSAL_FILES:
   # TRAIN: ('proposal/MCG-coco_2014_train-boxes.pkl',)
   # TEST:  ('proposal/MCG-coco_2014_val-boxes.pkl',)
-  TRAIN: ('proposal/EdgeBoxes-dishwasher_train_im_data.pkl',)
-  TEST:  ('proposal/EdgeBoxes-dishwasher_test_real_data.pkl',)
+  # Dishwasher
+  # TRAIN: ('proposal/EdgeBoxes-dishwasher_train_im_data.pkl',)
+  TRAIN: ('proposal/EdgeBoxes-dishwasher_train_im_data_augmented_score_no_max_boxes.pkl',)
+  # TRAIN: ('proposal/EdgeBoxes-dishwasher_test_real_data_augmented_score.pkl',)
+  TEST:  ('proposal/EdgeBoxes-dishwasher_test_real_data_new.pkl',)
 DATALOADER:
   SIZE_DIVISIBILITY: 32
 INPUT:
