@@ -37,13 +37,14 @@ class DatasetCatalog(object):
             "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/labels.json"
         },
         "coco_2014_train_partial": {
-            "img_dir": "coco/train2014",
-            "ann_file": "coco/annotations/instances_train2014_partial.json"
+            "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/data/",
+            "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/coco_dishwasher_im_data/point_labels.json"
         },
         "coco_2014_val": {
             "img_dir": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/data/",
             "ann_file": "/home/crdw/suraj/data/dishwasher/CocoFormat/test_data/labels.json"
         },
+        ################################################################################ 
         "coco_2014_minival": {
             "img_dir": "coco/val2014",
             "ann_file": "coco/annotations/instances_minival2014.json"
